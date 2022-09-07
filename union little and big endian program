@@ -1,0 +1,16 @@
+
+
+//finding the endianess of the system using unions
+
+#include <stdio.h>
+
+union endian{
+unsigned int value;
+unsigned int byte[4];
+};
+int main()
+{
+  union endian t1={0x12345678};
+  (t1.byte[0]=0x78)?printf("little"):printf("big");
+  return 0;
+}
